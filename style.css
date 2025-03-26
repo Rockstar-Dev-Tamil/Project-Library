@@ -1,4 +1,4 @@
-/* Import  Google Font */
+/* Import a cool futuristic Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500&display=swap');
 body {
     font-family: Arial, sans-serif;
@@ -86,67 +86,98 @@ button {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 4px;
-    text-shadow: 0 0 5px rgba(255, 0, 127, 0.8), 0 0 15px rgba(122, 0, 255, 0.6);
-    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     display: inline-block;
     cursor: pointer;
     position: relative;
-    overflow: hidden;
 }
 
-/* Hover Effect: Pulsating Glow & Scale */
+/* Hover Effect: Bright Glow */
 .navbar h1:hover {
-    transform: scale(1.1);
-    text-shadow: 0 0 10px rgba(255, 0, 127, 1), 0 0 20px rgba(122, 0, 255, 0.8);
-}
-
-/* Subtle Glitch Effect */
-@keyframes glitch {
-    0% {
-        transform: translateX(0);
-    }
-    20% {
-        transform: translateX(-2px);
-    }
-    40% {
-        transform: translateX(2px);
-    }
-    60% {
-        transform: translateX(-1px);
-    }
-    80% {
-        transform: translateX(1px);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-/* Apply glitch animation on hover */
-.navbar h1:hover {
-    animation: glitch 0.3s infinite;
+    text-shadow: 0 0 10px rgba(255, 0, 127, 1), 
+                 0 0 20px rgba(255, 0, 127, 0.8), 
+                 0 0 40px rgba(122, 0, 255, 1), 
+                 0 0 60px rgba(122, 0, 255, 0.8);
+    transform: scale(1.05);
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 50px;
-    background: linear-gradient(to right, blue, darkblue);
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
     color: white;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Book Catalog */
+/* Title Styling */
+.hero h2 {
+    font-size: 45px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: linear-gradient(90deg, #ffcc00, #ff6600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowText 2s infinite alternate;
+}
+
+/* Description Styling */
+.hero p {
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Text Glow Effect */
+@keyframes glowText {
+    from {
+        text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 102, 0, 1);
+    }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Book Catalog Section */
 .book-catalog {
     text-align: center;
-    padding: 50px 20px;
-    background: white;
+    padding: 60px 20px;
+    background: #f5f5f5;
+    border-radius: 0 0 30px 30px;
 }
 
+/* Section Title with Subtle Glow */
 .book-catalog h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    background: linear-gradient(90deg, #007bff, #ff6600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    animation: subtleGlow 2s infinite alternate;
 }
 
+/* Book Grid */
 .book-grid {
     display: flex;
     justify-content: center;
@@ -154,30 +185,76 @@ button {
     flex-wrap: wrap;
 }
 
+/* Book Cards */
 .book-card {
-    background: #f8f9fa;
-    padding: 15px;
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 20px;
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
 }
 
+/* Book Images */
 .book-card img {
     width: 100%;
     border-radius: 8px;
+    transition: transform 0.4s ease-in-out;
 }
 
+/* Book Titles */
 .book-card h4 {
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease-in-out;
 }
 
+/* Stylish Hover Effects */
+.book-card:hover {
+    transform: scale(1.07) rotate(1deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+    border-color: rgba(0, 123, 255, 0.6);
+}
+
+/* Image Zoom on Hover */
+.book-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Cool Text Color Change */
+.book-card:hover h4 {
+    color: #007bff;
+}
+
+
+/* Hover Effects */
 .book-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.book-card:hover img {
+    transform: scale(1.03);
+}
+
+/* Subtle Glowing Animation */
+@keyframes subtleGlow {
+    from {
+        text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(255, 102, 0, 0.6);
+    }
+}
+
 
 /* "Coming Soon" Placeholder */
 .coming-soon {
@@ -190,91 +267,134 @@ button {
     font-weight: bold;
 }
 
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: blue;
-    color: white;
-}
-
-/* Switch Container */
-.switch-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-
-
-
-
 
 /* Membership Section */
 .membership {
     text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(to right, #007bff, #0056b3);
+    padding: 60px 20px;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
     color: white;
+    border-radius: 12px;
+    margin: 40px auto;
 }
 
+/* Membership Heading */
 .membership h3 {
     font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
     margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
+/* Membership Description */
+.membership p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Plans Container */
 .membership-plans {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
-    margin-top: 20px;
 }
 
+/* Individual Plan Card */
 .plan {
     background: white;
-    color: black;
+    color: #333;
     padding: 25px;
     width: 250px;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.plan:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+/* Highlight Premium Plan */
+.plan.premium {
+    background: #ffcc00;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 204, 0, 0.4);
 }
 
+/* Plan Title */
 .plan h4 {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
+/* Membership Plan Details */
 .plan p {
-    font-size: 1rem;
-    margin: 5px 0;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
 }
 
-.premium {
-    background: #ffd700;
-    color: black;
-    font-weight: bold;
-}
-
+/* Join Buttons */
 .join-btn {
-    margin-top: 10px;
-    padding: 10px 15px;
     background: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 12px 18px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    border-radius: 6px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
+/* Button Hover Effect */
 .join-btn:hover {
     background: #0056b3;
+    transform: scale(1.1);
 }
+
+/* Hover Effects */
+.plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(to right, #1e1e1e, #333);
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 1.1rem;
+    position: relative;
+    border-top: 4px solid #ffcc00;
+}
+
+/* Contact Text */
+.footer p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+/* Social Media Icons */
+.footer .social-icons {
+    margin-top: 10px;
+}
+
+.footer .social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    transform: scale(1.2);
+    color: #ffcc00;
+}
+
+/* Copyright Text */
+.footer .copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
