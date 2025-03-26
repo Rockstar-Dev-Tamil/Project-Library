@@ -160,25 +160,25 @@ button {
 .book-catalog {
     text-align: center;
     padding: 60px 20px;
-    background: #f5f5f5;
+    background: #f9f9f9;
     border-radius: 0 0 30px 30px;
 }
 
-/* Section Title with Subtle Glow */
+/* Section Title with Cool Gradient */
 .book-catalog h3 {
     font-size: 2.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    background: linear-gradient(90deg, #007bff, #ff6600);
+    background: linear-gradient(90deg, #ff6600, #007bff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 30px;
-    animation: subtleGlow 2s infinite alternate;
+    animation: subtleGlow 1.5s infinite alternate;
 }
 
 /* Book Grid */
-.book-grid {
+.books {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -191,25 +191,26 @@ button {
     padding: 20px;
     width: 220px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    transition: all 0.4s ease-in-out;
     position: relative;
     overflow: hidden;
     border: 2px solid transparent;
+    text-decoration: none; /* Removes underline */
 }
 
 /* Book Images */
 .book-card img {
     width: 100%;
     border-radius: 8px;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Book Titles */
 .book-card h4 {
-    margin-top: 15px;
-    font-size: 1.2rem;
+    margin-top: 12px;
+    font-size: 1.3rem;
     font-weight: bold;
     color: #333;
     transition: color 0.3s ease-in-out;
@@ -217,15 +218,15 @@ button {
 
 /* Stylish Hover Effects */
 .book-card:hover {
-    transform: scale(1.07) rotate(1deg);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     filter: brightness(1.1);
     border-color: rgba(0, 123, 255, 0.6);
 }
 
 /* Image Zoom on Hover */
 .book-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08);
     filter: brightness(1.2);
 }
 
@@ -234,26 +235,16 @@ button {
     color: #007bff;
 }
 
-
-/* Hover Effects */
-.book-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.book-card:hover img {
-    transform: scale(1.03);
-}
-
 /* Subtle Glowing Animation */
 @keyframes subtleGlow {
     from {
-        text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        text-shadow: 0 0 4px rgba(0, 123, 255, 0.6);
     }
     to {
-        text-shadow: 0 0 10px rgba(255, 102, 0, 0.6);
+        text-shadow: 0 0 8px rgba(255, 102, 0, 0.7);
     }
 }
+
 
 
 /* "Coming Soon" Placeholder */
@@ -396,5 +387,77 @@ button {
     font-size: 0.9rem;
     opacity: 0.7;
     margin-top: 5px;
+}
+/* Book Detail Section */
+.book-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+.book-cover {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.book-info {
+    max-width: 500px;
+}
+
+.book-info h2 {
+    font-size: 2rem;
+    color: #222;
+}
+
+.book-desc {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.read-btn, .download-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.read-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.download-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.read-btn:hover {
+    background-color: #2980b9;
+}
+
+.download-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Back to Home Button */
+.back-btn {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    background: #444;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background: #666;
 }
 

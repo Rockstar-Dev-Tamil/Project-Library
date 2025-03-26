@@ -43,3 +43,11 @@ displayBooks();
 searchBar.addEventListener("input", (e) => {
     displayBooks(e.target.value);
 });
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".book-card").forEach(card => {
+        card.addEventListener("click", function () {
+            const bookTitle = this.querySelector("h4").innerText.toLowerCase().replace(/\s+/g, '-');
+            window.location.href = `books/${bookTitle}.html`;
+        });
+    });
+});
